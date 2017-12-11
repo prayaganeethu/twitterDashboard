@@ -19,9 +19,8 @@
     <script src="javascripts/render.js"></script>
   </head>
   <body>
-
-
     <section class="hero is-small">
+
       <div class="hero-head">
         <nav class="navbar">
           <div class="container">
@@ -37,25 +36,18 @@
       </div>
 
       <div class="hero-body">
-        <div class="tile is-ancestor">
-          <div class="tile is-parent">
-            <div class="tile is-child box">
-              <div class="container has-text-centered">
-                <div class="field">
-                  <label class="label">Screen Name</label>
-                  <div class="control has-icons-left has-icons-right">
-                    <input class="input is-success is-medium" size="30" type="text" placeholder="Your twitter screen name">
-                    <span class="icon is-small is-left">
-                      <i class="fa fa-user"></i>
-                    </span>
-                    <span class="icon is-small is-right is-invisible" id="check">
-                      <i class="fa fa-check"></i>
-                    </span>
-                  </div>
-                  <p class="help is-success is-invisible" id="success">This username is available</p>
-                </div>
-              </div>
+        <div class="container has-text-centered"
+          <div class="field" id="login">
+            <div class="control has-icons-left has-icons-right" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);display: flex; flex-wrap: wrap; flex-direction: column; align-items: center;">
+              <input class="input is-success is-medium" style="margin:auto;" type="text" placeholder="Your twitter screen name">
+              <span class="icon is-small is-left">
+                <i class="fa fa-user"></i>
+              </span>
+              <span class="icon is-small is-right is-invisible" id="check">
+                <i class="fa fa-check"></i>
+              </span>
             </div>
+            <p class="help is-success is-invisible" id="success">This username is available</p>
           </div>
         </div>
       </div>
@@ -63,9 +55,23 @@
       <div class="hero-foot">
         <nav class="tabs is-boxed is-fullwidth">
           <div class="container">
-          </div>
+            <footer class="footer">
+              <div class="container">
+                <div class="content has-text-centered">
+                    <a href="https://github.com/prayaganeethu" class="button notification is-info is-inverted" >
+                      <span class="icon">
+                        <i class="fa fa-github"></i>
+                      </span>
+                      <span>Twitter Dashboard</span>
+                    </a>
+                  <p> By <a href="https://twitter.com/prayaganeethu">Neethu Mohandas</a> for <a href="http://swym.it/">swym</a></p>
+                </div>
+              </div>
+            </footer>
         </nav>
       </div>
+      </div>
+
     </section>
   </body>
 </html>

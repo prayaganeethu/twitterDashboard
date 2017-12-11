@@ -4,6 +4,7 @@
   "description": "A simple twitter dashboard which tells you your popular tweeters, trending topics, and your status update history",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

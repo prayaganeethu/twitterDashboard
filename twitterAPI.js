@@ -7,12 +7,8 @@ const tweet = new Twit({
   access_token_secret: 'EkF2JQx9jcsBOyyMU4UsZYgFqLWJ1UH0W8NCDPL7Axnbs'
 })
 
-const params = {
-  screen_name: 'sherylsandberg'
-}
-
 const tweeters = function (req, res) {
-  tweet.get('friends/list', params)
+  tweet.get('friends/list', req.query)
     .then(showTweeters)
     .then((result) => {
       res.json(result)
@@ -34,6 +30,85 @@ function showTweeters (result) {
   return friendsSorted.slice(0, 10)
 }
 
+const topicParams = {
+  id: 1
+}
+
+const topics = function (req, res) {
+  tweet.get('trends/place', topicParams)
+    .then(showTopics)
+    .then((result) => {
+      res.json(result)
+    })
+}
+
+function showTopics (result) {
+  const {data} = result
+  let topics = data[0]['trends']
+  let topicsSorted = topics.sort(function (a, b) {
+    return b.tweet_volume - a.tweet_volume
+  })
+  return topicsSorted.slice(0, 10)
+}
+
+const filteredFeed = function (req, res) {
+  tweet.get('statuses/user_timeline', req.query)
+    .then(showFeed)
+    .then((result) => {
+      res.json(result)
+    })
+}
+
+function showFeed (result) {
+  const {data} = result
+  const statuses = []
+  for (let status of data) {
+    let feed = {}
+    feed['status'] = status['text']
+    statuses.push(feed)
+  }
+  return statuses
+}
+
+const userDetails = function (req, res) {
+  tweet.get('users/show', req.query)
+    .then(showUserDetails)
+    .then((result) => {
+      res.json(result)
+    })
+}
+
+function showUserDetails (result) {
+  const {data} = result
+  const user = []
+  const userDetails = {}
+  userDetails['name'] = data['screen_name']
+  userDetails['followers_count'] = data['followers_count']
+  userDetails['friends_count'] = data['friends_count']
+  userDetails['tweets'] = data['statuses_count']
+  userDetails['location'] = data['location']
+  user.push(userDetails)
+  return user
+}
+
+function verify (result) {
+  const {data} = result
+  if (data['errors']) return false
+  else return true
+}
+
+const verifyUser = function (req, res) {
+  tweet.get('users/show', req.body)
+    .then(verify)
+    .then((result) => {
+      res.json([result, req.body])
+    })
+}
+
 module.exports = {
-  tweeters: tweeters
+  tweeters: tweeters,
+  topics: topics,
+  filteredFeed: filteredFeed,
+  userDetails: userDetails,
+  verifyUser: verifyUser
 }

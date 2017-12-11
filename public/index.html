@@ -10,6 +10,19 @@
     <h2 class="title notification is-info">Twitter Dashboard
       <div id="navbarMenuHeroB" class="navbar-menu">
         <div class="navbar-end">
+          <div class="navbar-end container has-text-centered login" >
+              <div class="field has-addons" id="login">
+                <div class="control has-icons-left">
+                  <input class="input is-success is-medium" type="text" placeholder="Twitter screen name" id="screen">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-user"></i>
+                  </span>
+                </div>
+                <div class="control">
+                  <button class="button is-medium is-link" onclick="handleSubmit()">Submit</button>
+                </div>
+              </div>
+          </div>
           <a class="navbar-item is-small" id="screen_name">
           </a>
         </div>
@@ -20,6 +33,27 @@
   </head>
   <body>
     <section class="hero is-small">
+
+      <nav class="level is-mobile page-dashboard">
+       <div class="level-item has-text-centered">
+         <div>
+           <p class="heading">Tweets</p>
+           <p class="title" id="tweets"></p>
+         </div>
+       </div>
+       <div class="level-item has-text-centered">
+         <div>
+           <p class="heading">Following</p>
+           <p class="title" id="friends"></p>
+         </div>
+       </div>
+       <div class="level-item has-text-centered">
+         <div>
+           <p class="heading">Followers</p>
+           <p class="title" id="followers"></p>
+         </div>
+       </div>
+     </nav>
 
       <div class="hero-head">
         <nav class="navbar">
@@ -36,18 +70,21 @@
       </div>
 
       <div class="hero-body">
-        <div class="container has-text-centered"
-          <div class="field" id="login">
-            <div class="control has-icons-left has-icons-right" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);display: flex; flex-wrap: wrap; flex-direction: column; align-items: center;">
-              <input class="input is-success is-medium" style="margin:auto;" type="text" placeholder="Your twitter screen name">
-              <span class="icon is-small is-left">
-                <i class="fa fa-user"></i>
-              </span>
-              <span class="icon is-small is-right is-invisible" id="check">
-                <i class="fa fa-check"></i>
-              </span>
+        <div class="tile is-ancestor page-dashboard">
+          <div class="tile is-4 is-vertical is-parent">
+            <div class="tile is-child notification is-info box" id="popular_tweeters">
+              <p class="title">Popular tweeters</p>
             </div>
-            <p class="help is-success is-invisible" id="success">This username is available</p>
+            <div class="tile is-child notification is-info box" id="trending_topics">
+              <p class="title">Trending topics</p>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <div class="tile is-child notification is-info box">
+              <p class="title">Twitter feed</p>
+                <article class="message is-info" id="twitter_feed">
+                </article>
+            </div>
           </div>
         </div>
       </div>

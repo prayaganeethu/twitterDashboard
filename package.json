@@ -1,0 +1,36 @@
+{
+  "name": "twitterdashboard",
+  "version": "1.0.0",
+  "description": "A simple twitter dashboard which tells you your popular tweeters, trending topics, and your status update history",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prayaganeethu/twitterDashboard.git"
+  },
+  "keywords": [
+    "dashboard",
+    "javascript",
+    "html",
+    "bulma",
+    "express",
+    "jquery",
+    "twitter"
+  ],
+  "author": "Neethu Mohandas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prayaganeethu/twitterDashboard/issues"
+  },
+  "homepage": "https://github.com/prayaganeethu/twitterDashboard#readme",
+  "dependencies": {
+    "bulma": "^0.6.1",
+    "express": "^4.16.2",
+    "twit": "^2.2.9"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3"
+  }
+}

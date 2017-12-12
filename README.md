@@ -27,4 +27,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hats off to [swym](swym.it), for giving me the chance to try out more in javascript.
+* Hats off to [swym](http://swym.it/), for giving me the chance to try out more in javascript.

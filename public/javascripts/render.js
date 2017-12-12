@@ -8,9 +8,7 @@ function init () {
 }
 
 function handleSubmit () {
-  console.log('SUCCESS')
   let screenName = $('#screen').val()
-  console.log(screenName)
   $.post('/', {screenName})
     .done(() => {
       $(".login").hide()

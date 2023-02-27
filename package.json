@@ -4,8 +4,7 @@
   "description": "A simple twitter dashboard which tells you your popular tweeters, trending topics, and your status update history",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +32,8 @@
     "twit": "^2.2.9"
   },
   "devDependencies": {
+    "@playwright/test": "^1.31.1",
+    "dotenv-safe": "^8.2.0",
     "standard": "^10.0.3"
   }
 }

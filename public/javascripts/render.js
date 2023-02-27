@@ -13,7 +13,7 @@ function handleSubmit () {
     .done(() => {
       $(".login").hide()
       $(".page-dashboard").show()
-      $('#screen_name').empty().append(`<span><a href='https://twitter.com/${screenName}'>${screenName}</a>`)
+      $('#screen_name').empty().append(`<span><a href='https://twitter.com/${screenName}' id=screenname>${screenName}</a>`)
       $.get('/tweeters', {screen_name: screenName})
         .then((response) => {
           response.forEach((entry) => {
